@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TodoWidgetComponent } from './widgets/todo-widget/todo-widget.component';
 
 
-
 @NgModule({
   declarations: [
     TodoWidgetComponent
@@ -15,4 +14,5 @@ import { TodoWidgetComponent } from './widgets/todo-widget/todo-widget.component
     CommonModule
   ]
 })
-export class TodoModule { }
+export class TodoModule {
+}

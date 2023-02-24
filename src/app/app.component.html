@@ -1,4 +1,11 @@
-<h1 class="bg-amber-100">
-  {{title}}
-</h1>
-<app-todo-widget></app-todo-widget>
+<!--<app-lesson5 (sayHi)="onSayHi($event)" [(counter)]="age" [title]=" expression ? 'one' : 'two'"></app-lesson5>-->
+<!--<button (click)="expression = !expression">{{!expression ? 'one' : 'two'}}</button>-->
+<app-lesson6 [template]="ref">
+  <h3 class="header">Header</h3>
+  <p class="body">Body</p>
+  <footer class="footer">Footer</footer>
+</app-lesson6>
+
+<ng-template #ref let-element>
+  <p>{{element}} I am frp App component</p>
+</ng-template>

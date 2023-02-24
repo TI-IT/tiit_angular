@@ -8,9 +8,9 @@ describe('TodoWidgetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TodoWidgetComponent ]
+      declarations: [TodoWidgetComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TodoWidgetComponent);
     component = fixture.componentInstance;

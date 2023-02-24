@@ -1,0 +1,29 @@
+<button (click)="expression = !expression" class="">Toggle</button>
+<p *ngIf="expression; else:elseCase">I am OK</p>
+<!--#elseCase-шаблонная переменная-->
+<ng-template #elseCase>
+  <div >I ma bad</div>
+</ng-template>
+<hr/>
+
+<button (click)="generateUser()">Generate User</button>
+
+<ul *ngIf="deepObject?.user as user">
+  <li>Name is: {{user.name}}</li>
+  <li>SurName is: {{user.surname}}</li>
+</ul>
+<hr/>
+
+<!--trackBy-Для оптимизации-->
+<ul>
+  <li *ngFor="let user of users; index as i; trackBy: trackBy" [ngSwitch]="user.template">
+    <p *ngSwitchCase="'bold'"><b>{{user.name}}</b></p>
+    <p *ngSwitchCase="'cursive'"><strong>{{user.name}}</strong></p>
+    <p *ngSwitchCase="'italic'"><i>{{user.name}}</i></p>
+    <p *ngSwitchDefault><span>{{user.name}}</span></p>
+  </li>
+</ul>
+
+
+
+
