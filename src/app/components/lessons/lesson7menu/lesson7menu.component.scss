@@ -1,0 +1,12 @@
+:host-context(.hidden){
+  display: none;
+}
+:host {
+  position: relative;
+  .menu{
+    min-width: content-box;
+    position: absolute;
+    background-color: #ccc;
+    border: 1px solid black;
+  }
+}
