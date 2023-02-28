@@ -15,6 +15,8 @@ import { Lesson6Component } from './components/lessons/lesson6/lesson6.component
 import { Lesson7menuComponent } from './components/lessons/lesson7menu/lesson7menu.component';
 import { ParentComponent } from './components/lessons/lesson8/parent/parent.component';
 import { ChildComponent } from './components/lessons/lesson8/child/child.component';
+import { PostComponent } from './components/lesonsV/post/post.component';
+import { DirectiveLesson13Component } from './components/lesonsV/directive-lesson13/directive-lesson13.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ChildComponent } from './components/lessons/lesson8/child/child.compone
     Lesson6Component,
     Lesson7menuComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    PostComponent,
+    DirectiveLesson13Component
   ],
   imports: [
     BrowserModule,
