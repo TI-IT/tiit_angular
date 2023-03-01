@@ -1,0 +1,81 @@
+<h2  title="{{title}}">Интерполяция</h2>
+<p><b>пытается пивести в строку</b></p>
+<hr>
+<h2  title="{{bindings}}">bindings [  ]</h2>
+<p><b>Передаем данные из TS в HTML</b></p>
+<img [src]="img" alt="images">
+<hr>
+<h2  title="{{bindings}}">Event Bindings ( $event )</h2>
+
+<p><b>Передаем данные из HTML в TS</b></p>
+<input type="text" (keyup.enter)="onInput($event)" (blur)="onInput($event)">
+<p><strong>{{inputValue}}</strong></p>
+<hr>
+<h2  title="{{bindings}}">2 Way Binding ( $event )</h2>
+<p><b>Двустороннее связывание HTML и TS</b></p>
+<p><b>Импортируем FormsModule</b></p>
+<input type="text" [(ngModel)]="title" >
+<p><strong>{{title}}</strong></p>
+<hr>
+<h2  title="{{bindings}}">Директива ngStyle</h2>
+<p><b>Принемает объект - Бандим стили</b></p>
+<button (click)="backgroundToggle = !backgroundToggle">Toogle</button>
+<div [ngStyle]="{
+width: '200px',
+height: '200px',
+border: '2px solid gold',
+borderRadius: '20px',
+backgroundColor: backgroundToggle ? 'red'
+ : 'blue'
+}"></div>
+
+<p [ngClass]="{
+red: backgroundToggle,
+blue: !backgroundToggle
+}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, quaerat.</p>
+
+<p [class.red]=" backgroundToggle"
+   [class.blue]=" !backgroundToggle"
+>Lorem ipsum dolor sit amet/</p>
+<hr>
+<h2  title="{{bindings}}">Структурные директивы</h2>
+<p><b>Отображение по условию с ngIf else</b></p>
+<p><b>Изменения шаблона *</b></p>
+<p><b>Позволяет добовлять локальные сылки #</b></p>
+<button (click)="toggle = !toggle">Toogle</button>
+<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, perspiciatis.</p>
+<ng-template #blueP>
+  <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, perspiciatis.</p>
+</ng-template>
+
+<hr>
+<h2  title="{{bindings}}">Директива ngSwitch</h2>
+
+<button (click)="toggleSwith = !toggleSwith">toggleSwith</button>
+<button (click)="toggleSwith = 111">Set 111</button>
+<div [ngSwitch]="toggleSwith">
+  <p *ngSwitchCase="true" class="red">Lorem ipsum dolor.</p>
+  <p  *ngSwitchCase="false" class="blue">Lorem ipsum dolor sit amet </p>
+  <p  *ngSwitchDefault class="def">Lorem  sit amet </p>
+</div>
+<hr>
+<h2  title="{{bindings}}">Директива Циклы с ngFor</h2>
+
+<ul>
+  <li *ngFor="let number of arr; let idx = index">
+    {{idx +1}}<strong>{{number}}</strong>
+  </li>
+</ul>
+
+<ul style="list-style: none">
+  <li *ngFor="let post of objis; let idx = index">
+    {{idx +1}}<p>{{post.title}} {{post.author}} </p>
+    <p *ngFor="let comment of post.comments">{{comment.name}} {{comment.text}}</p>
+
+  </li>
+</ul>
+
+<hr>
+<h2  title="{{bindings}}">pipes</h2>
+<p><b>трансформеры | pipe</b></p>
+<p>{{now | date: 'long' | uppercase}}</p>
