@@ -17,4 +17,14 @@ export class AppPostComponent {
   {title: 'Следующий блок будет про директивы', text: 'Будут директивы и еще пайпы', id: 2},
   {title: 'Хочу выучить Angular', text: 'Angular компаненты', id: 3}
 ]
+
+  upddatePosts(post: Post){
+    this.posts.unshift(post) //Добоввляем в массив 1 элемент
+    // console.log("Post ", post)
+  }
+
+  removePost(id: number){
+    console.log(id)
+    this.posts = this.posts.filter(p => p.id !== id)
+  }
 }

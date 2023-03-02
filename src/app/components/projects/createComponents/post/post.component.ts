@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, ContentChild, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Post } from '../app-post/app-post.component';
 
 @Component({
@@ -7,10 +7,20 @@ import { Post } from '../app-post/app-post.component';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit{
-  @Input() post: Post | any
+  // @Input('myPost') post: Post | any //входящее свойство ('myPost')-ожидаемый параметор
+  @Input() post: Post | any //входящее свойство ('')-если пусто то по умолчанию будет post
+
+  @Output() onRemove = new EventEmitter<number>()
+  @ContentChild('info', {static: true}) infoRef: ElementRef | any
+
+  removePost(){
+    this.onRemove.emit(this.post.id)
+  }
 
   constructor() {
   }
   ngOnInit(){
+    //Получаем доступ до div
+    // console.log(this.infoRef.nativeElement)
   }
 }
