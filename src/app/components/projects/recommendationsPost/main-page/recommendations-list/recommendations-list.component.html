@@ -1,0 +1,8 @@
+<div class="posts-wrapper">
+  <p class="recommendations-title">Your Recommendation</p>
+  <div *ngFor="let p of posts" class="post-item">
+    <app-post [post]="p">
+      <button class="post-btn" (click)="emitAddToFavorites(p)">Select</button>
+    </app-post>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { ConnectionsComponent } from './components/documentation/connections/con
 import { PostComponent } from './components/projects/createComponents/post/post.component';
 import { PostFormComponent } from './components/projects/createComponents/post-form/post-form.component';
 import { AppPostComponent } from './components/projects/createComponents/app-post/app-post.component';
+import { MainPageModule } from './components/projects/recommendationsPost/main-page/main-page.module';
 
 
 @NgModule({
@@ -24,9 +25,13 @@ import { AppPostComponent } from './components/projects/createComponents/app-pos
     BrowserModule,
     AppRoutingModule,
     MatSlideToggleModule,
-    FormsModule
+    FormsModule,
+    MainPageModule
   ],
   providers: [],
+  exports: [
+    PostComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

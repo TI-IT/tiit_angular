@@ -1,0 +1,12 @@
+<div class="main-page-content">
+  <div class="left-side">
+    <app-favorites-list [posts]="favoritesPosts" (onAddToRecommended)="addToFavoritesHandler($event)"></app-favorites-list>
+  </div>
+  <div class="right-side">
+    <app-recommendations-list [posts]="recommendedPosts" (onAddToFavorites)="addToRecommendedHandler($event)"></app-recommendations-list>
+  </div>
+</div>
+
+
+<button><a href="https://www.youtube.com/watch?v=Xdh9TXzI7kc&list=PLbqeffI9jHvXQjiFMfi7f4zFGHe6V8Q-n&index=4">Lesson</a>
+</button>
